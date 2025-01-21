@@ -2,12 +2,15 @@ import 'dotenv/config'; // Load environment variables
 import express from 'express';
 import mongoose from 'mongoose';
 import workoutRoutes from './routes/workouts.js'; // Ensure to include the .js extension
+import cors from 'cors';
 
+const cors = require('cors');
 // Express app
 const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 app.use((req, res, next) => {
   console.log(req.path, req.method);

@@ -11,6 +11,8 @@ const Home = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       const response = await fetch('/api/workouts')
+      `${process.env.REACT_APP_API_URL}/api/workouts`
+      
       const json = await response.json()
 
       if (response.ok) {
